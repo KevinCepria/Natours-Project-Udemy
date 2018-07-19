@@ -6,10 +6,7 @@
     padding: 6rem;
     font-size: $default-font-size;
     transform: skewX(-12deg);
-
-    & > *{
-       
-    }
+    background: rgba($color-black, .5);
 
     &__shape{
         height: 15rem;
@@ -26,14 +23,44 @@
         -o-clip-path: circle(50%);
         -moz-clip-path: circle(50%);
         transform: translateX(-3rem)  skewX(12deg);
+        position: relative;
     }
 
     &__img{
         height: 100%;
-        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.4);
+        transition: all .5s;
     }
 
     &__text{
         transform: skewX(12deg);
+        color: rgba($color-white,.8);
+    }
+
+    &__caption{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        text-transform: uppercase;
+        color: $color-white;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(-50%,-50%)
+    }
+
+    &:hover &__img{
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(3px) brightness(80%);
     }
 }
