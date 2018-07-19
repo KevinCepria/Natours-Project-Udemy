@@ -1,0 +1,39 @@
+.story{
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black,.1);
+    border-radius: 5px;
+    padding: 6rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    & > *{
+       
+    }
+
+    &__shape{
+        height: 15rem;
+        width: 15rem;
+        float: left;
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        -ms-shape-outside: circle(50% at 50% 50%);
+        -o-shape-outside: circle(50% at 50% 50%);
+        -moz-shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50%);
+        -webkit-clip-path: circle(50%);
+        -ms-clip-path: circle(50%);
+        -o-clip-path: circle(50%);
+        -moz-clip-path: circle(50%);
+        transform: translateX(-3rem)  skewX(12deg);
+    }
+
+    &__img{
+        height: 100%;
+        display: inline-block;
+    }
+
+    &__text{
+        transform: skewX(12deg);
+    }
+}
