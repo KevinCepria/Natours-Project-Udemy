@@ -129,7 +129,7 @@ body {
     width: 100%;
     height: 100%; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -137,7 +137,9 @@ body {
   border-radius: 10rem;
   transition: all .2s;
   position: relative;
-  font-size: 1.6rem; }
+  font-size: 1.6rem;
+  cursor: pointer;
+  border: none; }
 
 .btn:hover {
   transform: translateY(-3px);
@@ -146,7 +148,8 @@ body {
     transform: scaleX(1.5) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
@@ -383,6 +386,44 @@ body {
   opacity: 0;
   transform: translateY(-4rem); }
 
+.form__radio-group {
+  width: 49%;
+  display: inline-block; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4rem; }
+
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 4px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -.4rem;
+  left: 0; }
+  .form__radio-button::after {
+    content: "";
+    display: block;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #55c57a;
+    opacity: 0; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -514,7 +555,6 @@ body {
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url(../img/nat-10.jpg);
   background-size: cover;
-  height: 50rem;
   border-radius: 6px; }
   .book__form {
     width: 50%;
