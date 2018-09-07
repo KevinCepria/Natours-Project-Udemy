@@ -7,6 +7,15 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
     background: rgba($color-black, .5);
+
+    @include respond(tab-port){
+        width: 100%;
+    }
+
+    @include respond(phone){
+        width: 100%;
+        transform: skewX(0);
+    }
     
     &__shape{
         height: 15rem;
@@ -24,6 +33,10 @@
         -moz-clip-path: circle(50%);
         transform: translateX(-3rem)  skewX(12deg);
         position: relative;
+
+        @include respond(phone){
+            transform: translateX(-3rem) skewX(0);
+        }
     }
 
     &__img{
@@ -38,6 +51,10 @@
     &__text{
         transform: skewX(12deg);
         color: rgba($color-white,.8);
+
+        @include respond(phone){
+            transform: skewX(0);
+        }
     }
 
     &__caption{
