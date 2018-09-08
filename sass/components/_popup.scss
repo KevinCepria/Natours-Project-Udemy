@@ -46,7 +46,7 @@
     }
 
     &__text {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         margin-bottom: 4rem;
 
         -moz-column-count: 2;
@@ -91,5 +91,58 @@
         &:hover {
             color: $color-primary;
         }
+    }
+
+
+    @include respond (tab-port){
+        &__content {
+            width: 85%;
+        }
+    
+        &__left {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            top: 0;
+            left: 0;
+        }
+    
+        &__right {
+            position: relative;
+            width: 100%;
+            display: block;
+            background-color: rgba($color-white, 0.75)
+            
+        }
+    
+        &__img {
+            display: block;
+            width:50%;
+            filter: blur(5px)
+        }
+    
+        &__text {
+            margin-bottom: 2rem;
+            column-count: 1;
+            -moz-column-count: 1;
+        }
+    
+    }
+
+    @include respond (phone){
+
+        &__content {
+            width: 95%;
+        }
+    
+        &__right {
+            padding: 2rem 3rem;
+        }
+
+        & .heading-secondary{
+            font-size: 3rem
+        }
+    
     }
 }
