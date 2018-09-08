@@ -22,19 +22,24 @@
         height: 15rem;
         width: 15rem;
         float: left;
-        shape-outside: circle(50% at 50% 50%);
-        -webkit-shape-outside: circle(50% at 50% 50%);
-        -ms-shape-outside: circle(50% at 50% 50%);
-        -o-shape-outside: circle(50% at 50% 50%);
-        -moz-shape-outside: circle(50% at 50% 50%);
-        clip-path: circle(50%);
-        -webkit-clip-path: circle(50%);
-        -ms-clip-path: circle(50%);
-        -o-clip-path: circle(50%);
-        -moz-clip-path: circle(50%);
+        overflow: hidden;
+        border-radius: 50%;  
         transform: translateX(-3rem)  skewX(12deg);
         position: relative;
 
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)){
+            shape-outside: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            -ms-shape-outside: circle(50% at 50% 50%);
+            -o-shape-outside: circle(50% at 50% 50%);
+            -moz-shape-outside: circle(50% at 50% 50%);
+            clip-path: circle(50%);
+            -webkit-clip-path: circle(50%);
+            -ms-clip-path: circle(50%);
+            -o-clip-path: circle(50%);
+            -moz-clip-path: circle(50%);
+            border: none;
+        }
         @include respond(phone){
             transform: translateX(-1.5rem) skewX(0);
         }

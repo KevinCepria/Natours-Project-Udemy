@@ -52,7 +52,7 @@
 
     &__nav{
         height: 100vh;
-        width: 0%;
+        width: 0;
         position: fixed;
         top: 0;
         left: 0;
@@ -75,6 +75,7 @@
     &__link{
         &:link,
         &:visited{
+            min-width: 30rem;
             display: inline-block;
             font-size: 2.8rem;
             font-weight: 300;
