@@ -1,0 +1,14 @@
+FROM node:11.10-alpine
+WORKDIR /app
+run apk --no-cache add --virtual native-deps \
+    g++ gcc libgcc libstdc++ linux-headers make python
+  
+COPY ./package.json ./
+COPY ./package-lock.json ./
+
+RUN npm install --quiet node-gyp -g &&\
+    npm install --quiet && \
+    apk del native-deps
+    
+COPY . .
+CMD ["npm","run","docker:start"]
