@@ -11,7 +11,8 @@ To continue developing with Docker
 - You are good to go
 
 To continue without using docker
-- Run command "npm run start"
+- Run "npm install"
+- Run "npm run start"
 - Open project on localhost:8080
 - You are good to go
 
